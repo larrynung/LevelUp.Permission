@@ -2,7 +2,7 @@
 
     <PropertyGroup>        
         <PackageId>LevelUp.Permission</PackageId>
-        <Version>1.0.0</Version>
+        <Version>1.0.1</Version>
         <Authors>LarryNung</Authors>
         <Company>LevelUp</Company>
         <Description>A simple permission solution</Description>
