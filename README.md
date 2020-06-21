@@ -6,19 +6,19 @@ A simple permission solution
 
 ### Package Manager
 
-    Install-Package LevelUp.Permission --version 1.0.0
+    Install-Package LevelUp.Permission
 
 ### .NET CLI
 
-    dotnet add package LevelUp.Permission --version 1.0.0
+    dotnet add package LevelUp.Permission
 
 ### PackageReference
 
-    <PackageReference Include="LevelUp.Permission" Version="1.0.0" />
+    <PackageReference Include="LevelUp.Permission" />
 
 ### Packet CLI
 
-    paket add LevelUp.Permission --version 1.0.0
+    paket add LevelUp.Permission
 
 
 ## Tutorial
