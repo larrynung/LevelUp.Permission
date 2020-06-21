@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LevelUp.Permission", "LevelUp.Permission\LevelUp.Permission.csproj", "{1526EF05-6B5F-4543-A273-1146B632423E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LevelUp.Permission.Tests", "LevelUp.Permission.Tests\LevelUp.Permission.Tests.csproj", "{F1F07EB7-BACD-44A4-A239-C4CD97D99619}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1526EF05-6B5F-4543-A273-1146B632423E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1526EF05-6B5F-4543-A273-1146B632423E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1526EF05-6B5F-4543-A273-1146B632423E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1526EF05-6B5F-4543-A273-1146B632423E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1F07EB7-BACD-44A4-A239-C4CD97D99619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1F07EB7-BACD-44A4-A239-C4CD97D99619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1F07EB7-BACD-44A4-A239-C4CD97D99619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1F07EB7-BACD-44A4-A239-C4CD97D99619}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
