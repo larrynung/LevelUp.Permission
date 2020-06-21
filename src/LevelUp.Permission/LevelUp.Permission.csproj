@@ -1,6 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
+    <PropertyGroup>        
+        <PackageId>LevelUp.Permission</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>LarryNung</Authors>
+        <Company>LevelUp</Company>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <TargetFramework>netstandard2.1</TargetFramework>
     </PropertyGroup>
 

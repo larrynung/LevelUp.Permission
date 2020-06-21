@@ -2,6 +2,25 @@
 
 A simple permission solution
 
+## Install
+
+### Package Manager
+
+    Install-Package LevelUp.Permission --version 1.0.0
+
+### .NET CLI
+
+    dotnet add package LevelUp.Permission --version 1.0.0
+
+### PackageReference
+
+    <PackageReference Include="LevelUp.Permission" Version="1.0.0" />
+
+### Packet CLI
+
+    paket add LevelUp.Permission --version 1.0.0
+
+
 ## Tutorial
 
 ### Getting started
