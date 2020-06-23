@@ -27,7 +27,11 @@ namespace LevelUp.Permission
         {
         }
 
-        public Permission(params T[] policies) : this(ConvertToValue(policies))
+        public Permission(IEnumerable<T> policies) : this(ConvertToValue(policies))
+        {
+        }
+
+        public Permission(params T[] policies) : this((IEnumerable<T>) policies)
         {
         }
 
@@ -125,32 +129,46 @@ namespace LevelUp.Permission
 
         #region Public methods
 
-        public Permission<T> Add(params T[] policies)
+        public Permission<T> Add(BigInteger value)
         {
-            this.Value = this.Value | ConvertToValue(policies);
+            this.Value |= value;
 
             return this;
+        }
+
+        public Permission<T> Add(IEnumerable<T> policies)
+        {
+            return Add(ConvertToValue(policies));
+        }
+
+        public Permission<T> Add(params T[] policies)
+        {
+            return Add((IEnumerable<T>) policies);
         }
 
         public Permission<T> Add(Permission<T> permission)
         {
-            this.Value = (this + permission).Value;
+            return Add((this + permission).Value);
+        }
 
-            return this;
+        public bool Contains(BigInteger value)
+        {
+            return (this.Value & value) == value;
         }
 
         public bool Contains(params T[] policies)
         {
-            var value = ConvertToValue(policies);
+            return Contains((IEnumerable<T>) policies);
+        }
 
-            return (this.Value & value) == value;
+        public bool Contains(IEnumerable<T> policies)
+        {
+            return Contains(ConvertToValue(policies));
         }
 
         public bool Contains(Permission<T> permission)
         {
-            var value = permission.Value;
-
-            return (this.Value & value) == value;
+            return Contains(permission.Value);
         }
 
         public override bool Equals(object obj)
@@ -170,18 +188,26 @@ namespace LevelUp.Permission
             return this.Value.GetHashCode();
         }
 
-        public Permission<T> Remove(params T[] policies)
+        public Permission<T> Remove(BigInteger value)
         {
-            this.Value &= All.Value ^ ConvertToValue(policies);
+            this.Value &= All.Value ^ value;
 
             return this;
         }
 
+        public Permission<T> Remove(IEnumerable<T> policies)
+        {
+            return Remove(ConvertToValue(policies));
+        }
+
+        public Permission<T> Remove(params T[] policies)
+        {
+            return Remove((IEnumerable<T>) policies);
+        }
+
         public Permission<T> Remove(Permission<T> permission)
         {
-            this.Value = (this - permission).Value;
-
-            return this;
+            return Remove((this - permission).Value);
         }
 
         public override string ToString()
@@ -203,6 +229,11 @@ namespace LevelUp.Permission
         #region Private static methods
 
         private static BigInteger ConvertToValue(params T[] policies)
+        {
+            return ConvertToValue((IEnumerable<T>) policies);
+        }
+
+        private static BigInteger ConvertToValue(IEnumerable<T> policies)
         {
             return policies.Aggregate((BigInteger) 0,
                 (total, next) => total | (BigInteger) Math.Pow(2, (int) Enum.Parse(typeof(T), next.ToString())));
